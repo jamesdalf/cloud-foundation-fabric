@@ -302,7 +302,7 @@ module "vpc" {
       range_prefix     = ""
     },
     {
-      ranges           = { 
+      ranges = {
         example  = "10.0.3.0/24",
         example2 = "10.0.4.0/24"
       }
@@ -310,7 +310,7 @@ module "vpc" {
     }
   ]
 }
-# tftest modules=1 resources=7 inventory=psa-prefix.yaml e2e
+# tftest modules=1 resources=14 inventory=psa-prefix-mixed.yaml e2e
 ```
 
 ### Private Service Networking with peering routes and peered Cloud DNS domains
@@ -494,7 +494,7 @@ module "vpc" {
 
 ```yaml
 name: simple
-region: primary 
+region: primary
 ip_cidr_range: 10.0.1.0/24
 
 # tftest-file id=subnet-simple path=config/subnets/subnet-simple.yaml schema=subnet.schema.json
